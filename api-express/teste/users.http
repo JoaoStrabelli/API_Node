@@ -1,0 +1,19 @@
+@URL=http://localhost:3000/users
+
+### CRIAR USUARIO
+POST {{URL}}
+Content-Type: application/json
+
+{
+    "name": "Juca",
+    "email": "juca@gmail.com",
+    "password": "1234"
+}
+
+### GET 
+GET {{URL}}?name
+Authorization: 1234
+
+###Obter um por Id
+GET {{URL}}/68dd64618557df76535bedd9
+Authorization: 1234
