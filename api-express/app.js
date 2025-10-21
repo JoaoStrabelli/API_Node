@@ -22,6 +22,7 @@ mongoose.connect(MONGO_URL, {
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const controleRouter = require('./routes/controle');
 const { error } = require('console');
 
 var app = express();
@@ -34,5 +35,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/controles', controleRouter);
 
 module.exports = app;

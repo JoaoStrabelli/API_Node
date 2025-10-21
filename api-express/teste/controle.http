@@ -1,0 +1,34 @@
+@URL=http://localhost:3000/controles
+
+### CRIAR CONTROLE
+POST {{URL}}
+Content-Type: application/json
+
+{
+    "tipo": "Irrigação automática",
+    "estufa": "67165b71c2e8c1f8bcfbe101", 
+    "sensores": ["67165b71c2e8c1f8bcfbe102", "67165b71c2e8c1f8bcfbe103"]
+}
+
+### LISTAR TODOS OS CONTROLES
+GET {{URL}}
+Authorization: 1234
+
+### OBTER UM CONTROLE POR ID
+GET {{URL}}/68f7c72182d5cf7f8f4f2834
+Authorization: 1234
+
+### ATUALIZAR UM CONTROLE EXISTENTE
+PUT {{URL}}/68f7c72182d5cf7f8f4f2834
+Content-Type: application/json
+Authorization: 1234
+
+{
+    "tipo": "Ventilação noturna",
+    "estufa": "67165b71c2e8c1f8bcfbe101",
+    "sensores": ["67165b71c2e8c1f8bcfbe104"]
+}
+
+### DELETAR UM CONTROLE
+DELETE {{URL}}/68f7c72182d5cf7f8f4f2834
+Authorization: 1234
