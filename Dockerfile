@@ -1,7 +1,7 @@
 FROM node:18-alpine
 WORKDIR /usr/src/app
-COPY backend/package*.json ./
+COPY api-express/package*.json ./
 RUN npm install --production
-COPY backend/. .
+COPY api-express/. .
 EXPOSE 3000
 CMD ["npm", "start"]
