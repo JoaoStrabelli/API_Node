@@ -3,6 +3,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require("mongoose");
+const sensorsRouter = require('./routes/sensors');
 
 require("dotenv").config(); // Ler as variáveis do arquivo .env
 
@@ -36,5 +37,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/controles', controleRouter);
+
+app.use(express.json());
+app.use('/sensors', sensorsRouter);
 
 module.exports = app;
